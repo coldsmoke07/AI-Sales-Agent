@@ -1,0 +1,5 @@
+# WaveNxD AI Sales Representative
+# Note: The application runs out-of-the-box using the Python standard library (zero mandatory dependencies).
+# The packages below are optional for loading .env files or making custom external API requests.
+python-dotenv>=1.0.0
+requests>=2.31.0

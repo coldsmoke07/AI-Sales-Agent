@@ -1,0 +1,257 @@
+{
+  "company": {
+    "name": "WaveNxD Technologies Pvt. Ltd.",
+    "location": "Kolhapur, Maharashtra, India",
+    "product_line": "No-pressure ultrasonic spray nozzle systems",
+    "description": "Our ultrasonic spray nozzles generate a soft, low-velocity mist with highly uniform, fine droplets without relying on hydraulic pressure, preventing clogging and overspray.",
+    "target_industries": [
+      "Medical Devices",
+      "Pharmaceuticals",
+      "Electronics",
+      "Energy",
+      "Semiconductors"
+    ],
+    "missing_info_policy": "I will confirm this with the WaveNxD engineering team.",
+    "pricing_policy": "Pricing depends on the exact system integration, generator, and mounting setup. I will have our sales engineering team include full pricing in your quotation."
+  },
+  "nozzle_families": [
+    {
+      "id": "standard_60khz",
+      "family": "Standard Family (torch, conical, flat)",
+      "frequency_khz": 60,
+      "droplet_size_um": 40,
+      "feed_rate_text": "5 ml/min",
+      "max_feed_rate_ml_min": 5.0,
+      "viscosity_text": "< 50 cP",
+      "max_viscosity_cp": 50,
+      "typical_applications": [
+        "Lab spray dryer",
+        "Spray pyrolysis"
+      ],
+      "keywords": [
+        "lab spray dryer",
+        "spray pyrolysis",
+        "standard",
+        "40 um",
+        "60 khz"
+      ],
+      "catalog_note": "Model number unassigned; identify by 60 kHz frequency, Standard (torch, conical, flat) family, and lab spray drying or spray pyrolysis application."
+    },
+    {
+      "id": "standard_120khz",
+      "family": "Standard Family (torch, conical, flat; dual-feed flat oval)",
+      "frequency_khz": 120,
+      "droplet_size_um": 25,
+      "feed_rate_text": "3 ml/min",
+      "max_feed_rate_ml_min": 3.0,
+      "viscosity_text": "< 50 cP",
+      "max_viscosity_cp": 50,
+      "typical_applications": [
+        "Lab spray dryer",
+        "Spray pyrolysis",
+        "Powder synthesis",
+        "Hydrogen production"
+      ],
+      "keywords": [
+        "powder synthesis",
+        "hydrogen",
+        "dual-feed",
+        "25 um",
+        "120 khz",
+        "nanoparticle",
+        "electrolyzer"
+      ],
+      "catalog_note": "Model number unassigned; identify by 120 kHz frequency, Standard family (including dual-feed flat oval), and 25 um droplet size."
+    },
+    {
+      "id": "standard_torch_180khz",
+      "family": "Standard Torch",
+      "frequency_khz": 180,
+      "droplet_size_um": 10,
+      "feed_rate_text": "5 ml/min",
+      "max_feed_rate_ml_min": 5.0,
+      "viscosity_text": "< 50 cP",
+      "max_viscosity_cp": 50,
+      "typical_applications": [
+        "Stent coatings"
+      ],
+      "keywords": [
+        "stent",
+        "drug eluting",
+        "ultra-fine",
+        "10 um",
+        "180 khz",
+        "implant"
+      ],
+      "catalog_note": "Note: The 180 kHz table row is labelled '60KHz' in the raw catalog table; treated strictly as 180 kHz based on its section heading."
+    },
+    {
+      "id": "high_viscosity_60khz",
+      "family": "High Viscosity, Conical (60 kHz)",
+      "frequency_khz": 60,
+      "droplet_size_um": 40,
+      "feed_rate_text": "Up to 3 ml/min",
+      "max_feed_rate_ml_min": 3.0,
+      "viscosity_text": "< 1000 cP",
+      "max_viscosity_cp": 1000,
+      "typical_applications": [
+        "Fuel cell coatings",
+        "Thick slurries"
+      ],
+      "keywords": [
+        "fuel cell",
+        "slurry",
+        "high viscosity",
+        "catalyst",
+        "membrane",
+        "pem"
+      ],
+      "catalog_note": "Designed for high-viscosity fluids (< 1000 cP) requiring 40 um droplets at up to 3 ml/min."
+    },
+    {
+      "id": "high_viscosity_24khz",
+      "family": "High Viscosity, Conical (24 kHz)",
+      "frequency_khz": 24,
+      "droplet_size_um": 60,
+      "feed_rate_text": "Up to 3 ml/min",
+      "max_feed_rate_ml_min": 3.0,
+      "viscosity_text": "< 1000 cP",
+      "max_viscosity_cp": 1000,
+      "typical_applications": [
+        "Fuel cell coatings",
+        "Thick slurries"
+      ],
+      "keywords": [
+        "fuel cell",
+        "thick slurry",
+        "24 khz",
+        "60 um",
+        "viscous",
+        "paste"
+      ],
+      "catalog_note": "Designed for high-viscosity fluids (< 1000 cP) where a larger 60 um droplet size and 24 kHz lower frequency help atomize dense slurries."
+    },
+    {
+      "id": "high_flow_60khz",
+      "family": "High Flow, Conical",
+      "frequency_khz": 60,
+      "droplet_size_um": 40,
+      "feed_rate_text": "Up to 200 ml/min",
+      "max_feed_rate_ml_min": 200.0,
+      "viscosity_text": "< 50 cP",
+      "max_viscosity_cp": 50,
+      "typical_applications": [
+        "Industrial spray dryers",
+        "High-throughput manufacturing"
+      ],
+      "keywords": [
+        "industrial spray dryer",
+        "high flow",
+        "production scale",
+        "200 ml/min",
+        "high throughput"
+      ],
+      "catalog_note": "Supports high feed rates up to 200 ml/min at 60 kHz (40 um droplets) for low-viscosity (< 50 cP) industrial spray drying."
+    },
+    {
+      "id": "pipac_60khz",
+      "family": "PIPAC, Conical",
+      "frequency_khz": 60,
+      "droplet_size_um": 40,
+      "feed_rate_text": "20 ml/min",
+      "max_feed_rate_ml_min": 20.0,
+      "viscosity_text": "50 cP",
+      "max_viscosity_cp": 50,
+      "typical_applications": [
+        "PIPAC chemotherapy"
+      ],
+      "keywords": [
+        "pipac",
+        "chemotherapy",
+        "oncology",
+        "peritoneal",
+        "aerosol chemotherapy"
+      ],
+      "catalog_note": "Specialized 60 kHz conical nozzle rated at 20 ml/min feed rate and 50 cP viscosity for PIPAC chemotherapy applications."
+    },
+    {
+      "id": "extended_horn_15mm",
+      "family": "Extended Horn, 15 mm (conical)",
+      "frequency_khz": 60,
+      "droplet_size_um": 40,
+      "feed_rate_text": "5 ml/min",
+      "max_feed_rate_ml_min": 5.0,
+      "viscosity_text": "< 50 cP",
+      "max_viscosity_cp": 50,
+      "typical_applications": [
+        "Blood collection tubes coating"
+      ],
+      "keywords": [
+        "blood collection",
+        "vacutainer",
+        "tube coating",
+        "15 mm",
+        "edta",
+        "heparin",
+        "clot activator"
+      ],
+      "catalog_note": "15 mm extended conical horn reaches inside blood collection tubes for uniform internal wall coating."
+    },
+    {
+      "id": "extended_horn_25mm",
+      "family": "Extended Horn, 25 mm (torch)",
+      "frequency_khz": 60,
+      "droplet_size_um": 40,
+      "feed_rate_text": "5 ml/min",
+      "max_feed_rate_ml_min": 5.0,
+      "viscosity_text": "< 1000 cP",
+      "max_viscosity_cp": 1000,
+      "typical_applications": [
+        "Syringe coating",
+        "High-viscosity narrow-bore medical applications"
+      ],
+      "keywords": [
+        "syringe",
+        "silicone oil",
+        "barrel",
+        "25 mm",
+        "narrow bore"
+      ],
+      "catalog_note": "25 mm extended torch horn handles viscosities up to 1000 cP (such as silicone oil lubricants) for syringe barrel coating."
+    }
+  ],
+  "complete_systems_and_accessories": [
+    {
+      "id": "micro_fluid_dispensing",
+      "name": "Micro Fluid Dispensing System",
+      "specifications": "0 to 200 ul metered dispensing volume",
+      "typical_applications": [
+        "Blood collection tubes",
+        "Syringes",
+        "Stents",
+        "Balloons",
+        "Catheter coating"
+      ],
+      "explanation": "Provides precision metered liquid delivery (0 to 200 ul) paired with ultrasonic nozzles for medical device coatings."
+    },
+    {
+      "id": "plc_xy_spray_pyrolysis",
+      "name": "PLC-Controlled XY Spray Pyrolysis System",
+      "specifications": "Substrate temperature up to 450 C, SS316 stainless steel enclosure",
+      "typical_applications": [
+        "Micro-coating",
+        "Transparent conductive oxide (TCO) coatings"
+      ],
+      "explanation": "Complete automated XY stage coating enclosure in SS316 with heated substrate up to 450 C for TCO, thin-film electronics, and solar/semiconductor research."
+    },
+    {
+      "id": "air_shaping_attachments",
+      "name": "Air-Shaping Attachments",
+      "specifications": "Focused beam or wide spray dispersion patterns",
+      "typical_applications": [
+        "Pattern width control across coating substrates"
+      ],
+      "explanation": "Optional air-shaping attachment to shape the ultrasonic plume into either a tightly focused beam or a wide spray fan."
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WaveNxD Technologies - AI Technical Sales Representative</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Left Sidebar: Clean ChatGPT style without demo chat buttons or API key modal -->
+    <aside class="sidebar">
+      <button id="btnNewChat" class="new-chat-btn" type="button">
+        <span>New Conversation</span>
+        <span>+</span>
+      </button>
+
+      <div class="sidebar-section-label">Requirement Progress</div>
+      <div class="progress-list">
+        <div id="stepApp" class="progress-step">
+          <span class="progress-step-title">1. Industry &amp; Application</span>
+          <span id="valApp">Pending</span>
+        </div>
+        <div id="stepMat" class="progress-step">
+          <span class="progress-step-title">2. Coating / Liquid Material</span>
+          <span id="valMat">Pending</span>
+        </div>
+        <div id="stepVisc" class="progress-step">
+          <span class="progress-step-title">3. Liquid Viscosity (cP)</span>
+          <span id="valVisc">Pending</span>
+        </div>
+        <div id="stepFlow" class="progress-step">
+          <span class="progress-step-title">4. Flow / Feed Rate</span>
+          <span id="valFlow">Pending</span>
+        </div>
+        <div id="stepDrop" class="progress-step">
+          <span class="progress-step-title">5. Droplet Size (µm)</span>
+          <span id="valDrop">Pending</span>
+        </div>
+        <div id="stepRec" class="progress-step">
+          <span class="progress-step-title">6. Recommended Nozzle</span>
+          <span id="valRec">Pending</span>
+        </div>
+        <div id="stepLead" class="progress-step">
+          <span class="progress-step-title">7. Quotation &amp; Callback</span>
+          <span id="valLead">Pending</span>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <button id="btnOpenCatalog" class="sidebar-item" type="button">
+          WaveNxD Product Catalog
+          <span class="sidebar-item-sub">View official nozzle specifications</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Chat Area -->
+    <main class="main-area">
+      <header class="top-bar">
+        <div class="brand-title">
+          <span>WaveNxD Sales Assistant</span>
+          <span class="brand-subtitle">Kolhapur, Maharashtra | Ultrasonic Spray Nozzle Systems</span>
+        </div>
+        <div class="top-controls">
+          <select id="voiceLangSelect" class="control-select" title="Language for Conversation and Voice">
+            <option value="en-IN">Language: English</option>
+            <option value="mr-IN">Language: Marathi (मराठी)</option>
+            <option value="hi-IN">Language: Hindi (हिन्दी)</option>
+            <option value="ta-IN">Language: Tamil (தமிழ்)</option>
+          </select>
+          <button id="btnToggleTTS" class="control-btn" type="button">Voice Output: Off</button>
+        </div>
+      </header>
+
+      <div id="chatStream" class="chat-stream"></div>
+
+      <div class="composer-area">
+        <div id="micStatusBanner" class="mic-status-banner">
+          <span id="micStatusText">Listening... Speak into your microphone now.</span>
+          <button id="btnCancelMic" class="control-btn" type="button">Close</button>
+        </div>
+
+        <form id="chatForm" class="composer-box">
+          <textarea
+            id="userInput"
+            class="composer-textarea"
+            rows="1"
+            placeholder="Select an option above, type your answer, or click Speak..."
+          ></textarea>
+          <button id="btnMic" class="icon-btn" type="button" title="Voice Input">Speak</button>
+          <button id="btnSend" class="send-btn" type="submit">Send</button>
+        </form>
+        <div class="composer-hint">
+          WaveNxD Technologies Pvt. Ltd., Kolhapur. Click any option chip above or type your response one step at a time.
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Catalog Reference Modal -->
+  <div id="catalogModal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <span>WaveNxD Product Catalog (Single Source of Truth)</span>
+        <button id="btnCloseCatalog" class="control-btn" type="button">Close</button>
+      </div>
+      <div class="modal-body">
+        <table class="catalog-table">
+          <thead>
+            <tr>
+              <th>Product Family</th>
+              <th>Frequency</th>
+              <th>Droplet Size</th>
+              <th>Feed Rate</th>
+              <th>Viscosity</th>
+              <th>Typical Applications</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Standard (torch, conical, flat)</td>
+              <td>60 kHz</td>
+              <td>40 µm</td>
+              <td>5 ml/min</td>
+              <td>&lt; 50 cP</td>
+              <td>Lab spray dryer, spray pyrolysis</td>
+            </tr>
+            <tr>
+              <td>Standard (torch, conical, flat; dual-feed flat oval)</td>
+              <td>120 kHz</td>
+              <td>25 µm</td>
+              <td>3 ml/min</td>
+              <td>&lt; 50 cP</td>
+              <td>Lab spray dryer, spray pyrolysis, powder synthesis, hydrogen production</td>
+            </tr>
+            <tr>
+              <td>Standard torch (Note: 180 kHz heading)</td>
+              <td>180 kHz</td>
+              <td>10 µm</td>
+              <td>5 ml/min</td>
+              <td>&lt; 50 cP</td>
+              <td>Stent coatings</td>
+            </tr>
+            <tr>
+              <td>High viscosity, conical</td>
+              <td>60 kHz</td>
+              <td>40 µm</td>
+              <td>Up to 3 ml/min</td>
+              <td>&lt; 1000 cP</td>
+              <td>Fuel cell coating</td>
+            </tr>
+            <tr>
+              <td>High viscosity, conical</td>
+              <td>24 kHz</td>
+              <td>60 µm</td>
+              <td>Up to 3 ml/min</td>
+              <td>&lt; 1000 cP</td>
+              <td>Fuel cell coating</td>
+            </tr>
+            <tr>
+              <td>High flow, conical</td>
+              <td>60 kHz</td>
+              <td>40 µm</td>
+              <td>Up to 200 ml/min</td>
+              <td>&lt; 50 cP</td>
+              <td>Industrial spray dryer</td>
+            </tr>
+            <tr>
+              <td>PIPAC, conical</td>
+              <td>60 kHz</td>
+              <td>40 µm</td>
+              <td>20 ml/min</td>
+              <td>50 cP</td>
+              <td>PIPAC chemotherapy</td>
+            </tr>
+            <tr>
+              <td>Extended horn, 15 mm (conical)</td>
+              <td>60 kHz</td>
+              <td>40 µm</td>
+              <td>5 ml/min</td>
+              <td>&lt; 50 cP</td>
+              <td>Blood collection tubes, coating</td>
+            </tr>
+            <tr>
+              <td>Extended horn, 25 mm (torch)</td>
+              <td>60 kHz</td>
+              <td>40 µm</td>
+              <td>5 ml/min</td>
+              <td>&lt; 1000 cP</td>
+              <td>Syringe coating, high viscosity</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Additional Systems &amp; Accessories in Catalog:</strong></p>
+        <ul style="margin-left: 18px; margin-top: 6px;">
+          <li><strong>Micro Fluid Dispensing System:</strong> 0 to 200 µl metered dispensing for blood collection tubes, syringes, stents, balloons, and catheter coating.</li>
+          <li><strong>PLC-Controlled XY Spray Pyrolysis System:</strong> Substrate temperature up to 450°C, SS316 enclosure, for micro-coating and transparent conductive oxide (TCO) coatings.</li>
+          <li><strong>Air-Shaping Attachments:</strong> Focused beam or wide spray dispersion patterns.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
